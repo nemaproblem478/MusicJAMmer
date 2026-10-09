@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "musicjammer"
+version = "0.1.0"
+description = "Chord-jamming cadence duel against an alpha-beta bot"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy",
+    "sounddevice",
+    "pygame",
+    "mido",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+build = ["pyinstaller", "pillow"]
+
+[tool.setuptools.packages.find]
+include = ["musicjammer*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
